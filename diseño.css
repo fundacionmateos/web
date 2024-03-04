@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {}
+
+@media only screen and (min-width: 1025px) {}
+
+
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #444;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+header {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    margin-top: 3%;
+}
+
+.dp{
+    width:62%;
+    height: 70%;
+}
+.dpc{
+    width:35%;
+}
+
+.dlog{
+    display: flex;
+}
+
+.esp {
+    font-size: 15px;
+    margin: 2% 0 2% 0;
+}
+
+.cen {
+    padding: 1.2rem 0 1.7rem 0;
+    display: flex;
+    justify-content: center;
+    color: rgb(64, 64, 204);
+    font-size: 170%;
+}
+
+.m {
+    display: flex;
+    justify-content: center;
+}
+
+.mi {
+    justify-content: center;
+    margin: 0 2% 0 2%;
+}
+
+.f {
+    font-size: 120%;
+}
+.fi {
+    font-size: 115%;
+}
+
+.h {
+    font-size: 150%;
+}
+
+#footer {
+    width: 100%;
+    height: 30%;
+    background-color: rgb(89, 177, 158);
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+footer {
+    padding: 20px 0 0 0;
+    margin: 7% 0 0 0;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
+    font-size: 99%;
+}
+
+.sei{
+    margin: 0 1% 2% 3%;
+}
+.sed{
+    margin: 0 3% 2% 1%;
+}
+
+.gm {
+    width: 40px;
+    height: 40px;
+}
+
+.fb {
+    width: 65px;
+    height: 65px;
+}
+
+/**/
+
+.main {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-content {
+    background: linear-gradient(50deg,
+            rgba(40, 42, 55, 1) 50%,
+            rgba(40, 42, 55, 0.7)),
+        url(img/FO.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    width: 1000px;
+    border-radius: 25px;
+}
+
+.form-content h2 {
+    color: #F4F6F9;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label {
+    font-size: 17px;
+    color: #959AAB;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    padding: 17px 14px;
+    background-color: #333646;
+    border: 0;
+    font-size: 15px;
+    color: #F4F6F9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+:focus {
+    outline: 1px solid #1E92E9;
+}
+
+.btn {
+    background-color: #1E92E9;
+    width: 150px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0979ce;
+}
+
+@media (max-width:991px) {
+    .main {
+        padding: 30px;
+    }
+
+    .form-content {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+.titpg{
+    text-align: center;
+    color: #74c1fc;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 120%;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width: 47%;
+    height: 40%;
+}

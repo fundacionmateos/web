@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="diseño.css">
+    <style>
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery img {
+            max-width: 75%;
+            max-height: 130%;
+            border-radius: 5px;
+        }
+
+        .g1 {
+            margin-top: 35px;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .controls button {
+            background-color: rgb(0, 207, 207);
+            cursor: pointer;
+            padding: 8px 16px;
+            font-size: 16px;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        .pz {
+            font-size: 170%;
+        }
+
+        .fra{
+            display: flex;
+            justify-content: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 4% 1% 0 5%;
+        }
+
+        .b{
+            color: deeppink;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="dlog">
+            <img class="dp" src="img/Lognom.jpg" alt="">
+            <img class="dpc" src="img/manos.webp" alt="">
+        </div>
+    </header>
+    <nav>
+        <ul class="n">
+            <li class="esp"><a href="index.html"><b>Inicio</b></a></li>
+            <li class="esp"><a href="quienessomos.html"><b>¿Quienes somos?</b></a></li>
+            <li class="esp"><a href="#"><b>Programas</b></a>
+                <ul>
+                    <li><a href="salud.html">Salud</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="bienestarsocial.html">Bienestar social</a></li>
+                </ul>
+            </li>
+            <li class="esp"><a href="#"><b>Mas</b></a>
+                <ul>
+                    <li><a href="voluntario.html">¿Quieres ser voluntario?</a></li>
+                    <li><a href="avisopriv.html">Aviso de privacidad</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="gallery g1">
+        <img id="currentImg1" src="img/im (2).jpg" alt="Foto 1">
+    </div>
+
+    <div class="controls">
+        <p><b>Educación</b></p>
+        <br>
+        <button onclick="prevImage(1)">Anterior</button>
+        <button onclick="nextImage(1)">Siguiente</button>
+    </div>
+
+    <div class="gallery">
+        <img id="currentImg2" src="img/im (5).jpg" alt="Foto 4">
+    </div>
+
+    <div class="controls">
+        <p><b>Salud</b></p>
+        <br>
+        <button onclick="prevImage(2)">Anterior</button>
+        <button onclick="nextImage(2)">Siguiente</button>
+    </div>
+
+    <div class="gallery">
+        <img id="currentImg3" src="img/im (8).jpg" alt="Foto 7">
+    </div>
+
+    <div class="controls">
+        <p><b>Bienestar social</b></p>
+        <br>
+        <button onclick="prevImage(3)">Anterior</button>
+        <button onclick="nextImage(3)">Siguiente</button>
+    </div>
+    <div class="fra">
+        <p class="pz">Se parte de una historia en la que <b class="b">tu</b> eres el protagonista.</p>
+    </div>
+    
+    <footer id="footer">
+        <section class="sei">
+            <h4>Direccion: Ave. Cordillera de los Andes #628-A, <br>
+                Las Puentes 1° Sector, San Nicolás de<br>
+                los Garza, N.L. 
+            </h4>
+        </section>
+        <section class="sed">
+            <h4>Para más información, puedes visitar <br>
+                nuestra página de Facebook o de lo <br>
+                contrario enviarnos un correo
+            </h4>
+            <a href="https://es-la.facebook.com/imgacionmateos/"><img src="img/fb.webp" alt="" class="fb"></a>
+            <br>
+            <a href="mailto:imgacionmateos2@gmail.com?Subject=Interesado%20">imgacionmateos2@gmail.com</a>
+        </section>
+    </footer>
+
+    <script>
+        var currentImageIndexes = [0, 0, 0];
+        var imagesArray = [
+            ["img/im (2).jpg", "img/im (3).jpg", "img/im (4).jpg", "img/im (5).jpg", "img/im (6).jpg", "img/im (7).jpg", "img/im (8).jpg"],
+            ["img/im (5).jpg", "img/im (6).jpg", "img/im (7).jpg"],
+            ["img/im (8).jpg", "img/im (2).jpg", "img/im (3).jpg"]
+        ];
+
+        function showImage(index, galleryIndex) {
+            var img = document.getElementById("currentImg" + galleryIndex);
+            img.src = imagesArray[galleryIndex - 1][index];
+        }
+
+        function prevImage(galleryIndex) {
+            currentImageIndexes[galleryIndex - 1] = (currentImageIndexes[galleryIndex - 1] - 1 + imagesArray[galleryIndex - 1].length) % imagesArray[galleryIndex - 1].length;
+            showImage(currentImageIndexes[galleryIndex - 1], galleryIndex);
+        }
+
+        function nextImage(galleryIndex) {
+            currentImageIndexes[galleryIndex - 1] = (currentImageIndexes[galleryIndex - 1] + 1) % imagesArray[galleryIndex - 1].length;
+            showImage(currentImageIndexes[galleryIndex - 1], galleryIndex);
+        }
+
+        for (var i = 0; i < currentImageIndexes.length; i++) {
+            showImage(currentImageIndexes[i], i + 1);
+        }
+    </script>
+
+</body>
+
+</html>
